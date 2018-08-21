@@ -52,7 +52,7 @@ def lambda_handler(event, context):
             },
         ],
     )
-    print("start time={}".format(datetime.now().strftime("%H:%M:%S.%f")[:-3]))
+    print("Job Submitted: ={}".format(datetime.now().strftime("%H:%M:%S.%f")[:-3]))
     print("job={}".format(job))
     job_id = job['Job']['Id']
     
@@ -60,9 +60,6 @@ def lambda_handler(event, context):
         response = s3.get_object(Bucket=bucket, Key=key)
         print("CONTENT TYPE: " + response['ContentType'])
         return response['ContentType']
-    
-    
-    
     
     except Exception as e:
         print(e)

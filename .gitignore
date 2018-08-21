@@ -1,3 +1,4 @@
 .application.json
 venv/
 .debug/
+.debug_old/
